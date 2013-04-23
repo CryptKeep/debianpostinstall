@@ -125,6 +125,10 @@ else
 
 fi
 
+displayandexec "Stop Apache2" /etc/init.d/apache2 stop
+
+displayandexec "Remove Apache2" $APT_GET  purge apache2 apache2.2-common apache2-doc apache2-mpm-prefork apache2-utils
+displayandexec "Autoremove" $APT_GET  autoremove
 # MaJ des depots
 displayandexec "Update the repositories list" $APT_GET update
 
